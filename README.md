@@ -1,42 +1,47 @@
+
 # 🧾 SnapSplit - Receipt & Bill Splitter AI
 
-SnapSplit is a Gemini-powered vision assistant and bill splitter built with Streamlit. Snap a photo of any receipt, extract itemized costs, split the bill evenly or by custom names, and send the summary directly to Email (Gmail SMTP), Telegram Bot, or WhatsApp with a single click.
-
----
+SnapSplit is a Gemini-powered vision assistant and bill splitter built with Streamlit. Take a photo of a receipt, extract itemized costs, split the bill evenly or by custom names, and send the summary through Email (Gmail SMTP), Telegram Bot, or WhatsApp.
 
 ## 🌟 Key Features
 
-1. **Gemini Vision Receipt OCR & Itemization**: Extract merchant name, subtotal, tax, tip, itemized list, and grand total automatically from messy real-world photos.
-2. **Flexible Bill Splitting**: Split totals equally or assign shares across custom person names.
-3. **Interactive Gemini Chat**: Ask follow-up questions directly about the receipt ("How much was tax?", "Who ordered drinks?").
-4. **Multi-Channel Action Tool**:
-   - **Gmail SMTP (Free, Option B)**: Uses Python's built-in `smtplib`.
-   - **Telegram Bot (Free, Option C)**: Send digests instantly to any Telegram `chat_id`.
-   - **WhatsApp via Twilio (Option A)**: Dispatch formatted messages directly to WhatsApp numbers.
-   - **Simulated Send Mode**: Test the app immediately even without API credentials.
-
----
+1. **Gemini Vision Receipt OCR & Itemization:** Extract the merchant name, subtotal, tax, tip, itemized list, and grand total from receipt images.
+2. **Flexible Bill Splitting:** Split totals equally or assign shares to custom person names.
+3. **Interactive Gemini Chat:** Ask follow-up questions about the receipt, such as "How much was tax?"
+4. **Multi-Channel Action Tool:**
+   - **Gmail SMTP:** Send summaries using Python's built-in `smtplib`.
+   - **Telegram Bot:** Send summaries to a Telegram chat.
+   - **WhatsApp via Twilio:** Send formatted messages through WhatsApp.
+   - **Simulated Send Mode:** Test the app without configuring messaging credentials.
 
 ## 🚀 Quick Start
 
-1. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+### 1. Install dependencies
 
-2. Run the Streamlit App:
-   ```bash
-   streamlit run app.py
-   ```
+```bash
+pip install -r requirements.txt
+```
 
-3. Open your browser at `http://localhost:8501`.
+### 2. Run the Streamlit app
 
----
+```bash
+streamlit run app.py
+```
+
+### 3. Open the app
+
+Visit `http://localhost:8501` in your browser.
 
 ## 📁 Project Structure
 
-- `app.py`: Streamlit main user interface and workflow orchestration.
-- `prompts.py`: System prompt and digest output templates for Gemini Vision.
-- `ai_service.py`: Multi-SDK Gemini Vision API integration and chat handler.
-- `send_action.py`: Action dispatcher supporting Gmail SMTP, Telegram Bot API, and Twilio WhatsApp.
-- `requirements.txt`: Python package dependencies.
+- `app.py` — Streamlit user interface and workflow.
+- `prompts.py` — Prompts and digest templates for Gemini Vision.
+- `ai_service.py` — Gemini Vision API integration and chat handler.
+- `send_action.py` — Gmail, Telegram, and Twilio WhatsApp messaging.
+- `requirements.txt` — Python dependencies.
+
+## 🔐 Configuration
+
+Configure your Gemini API key and any optional messaging credentials using Streamlit secrets or environment variables, as supported by your application code.
+
+**Important:** Never commit API keys, passwords, or other secrets to GitHub.
